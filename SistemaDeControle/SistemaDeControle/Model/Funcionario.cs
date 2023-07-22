@@ -13,6 +13,8 @@
         public Departamento? Departamento { get; set; }
         public int? CargoId { get; set; }
         public Cargo? Cargo { get; set; }
+		public int? CategoriaId { get; set; }
+		public Categoria? Categoria { get; set; }
 
 		public Funcionario(string nome, string email, char sexo, int idade, DateTime dTEntrada, decimal salarioAtual, int departamentoId, Departamento departamento, int cargoId, Cargo cargo)
 		{

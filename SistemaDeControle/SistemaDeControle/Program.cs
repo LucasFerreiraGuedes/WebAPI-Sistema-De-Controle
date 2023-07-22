@@ -1,6 +1,8 @@
 using SistemaDeControle.Context;
 using SistemaDeControle.Repository.CargoRepo;
+using SistemaDeControle.Repository.CategoriaRepo;
 using SistemaDeControle.Repository.DepartamentoRepo;
+using SistemaDeControle.Repository.FuncionarioRepo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,8 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSqlServer<AppDbContext>(builder.Configuration.GetConnectionString("MinhaConexao"));
+
 builder.Services.AddScoped<IDepartamento,DepartamentoRepository>();
 builder.Services.AddScoped<ICargoRepository,CargoRepository>();
+builder.Services.AddScoped<ICategoriaRepository,CategoriaRepository>();
+builder.Services.AddScoped<IFuncionarioRepository,FuncionarioRepository>();
 
 var app = builder.Build();
 

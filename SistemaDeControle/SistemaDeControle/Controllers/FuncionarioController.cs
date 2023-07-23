@@ -21,8 +21,8 @@ namespace SistemaDeControle.Controllers
 			return funcionarioRepository.GetAllFuncionarios().ToList();
 		}
 
-		[HttpGet("{id},{categoriaId}")]
-		public Funcionario GetFuncionarioById(int id,int categoriaId)
+		[HttpGet("{id}")]
+		public Funcionario GetFuncionarioById(int id)
 		{
 			return funcionarioRepository.GetFuncionarioById(id);
 		}
@@ -33,11 +33,37 @@ namespace SistemaDeControle.Controllers
 			return funcionarioRepository.GetAllInfoFuncionarioById(id);
 		}
 
+		[HttpGet("All-Info-ByFuncionarios")]
+		public List<Funcionario> GettAllInfoFuncionarios()
+		{
+			return funcionarioRepository.GetAllInfoByFuncionarios().ToList();
+		}
+
+		[HttpGet("Qtd-Func-Dp-Software")]
+		public int GetFuncDpSoftware()
+		{
+			return funcionarioRepository.QtdFuncDpSoftware();
+		}
+		[HttpGet("Func-By-Year")]
+		public List<Funcionario> GetFuncByYear(int year)
+		{
+			return funcionarioRepository.GetFuncYear(year).ToList();
+		}
+
+		[HttpGet("Func-Aumento-In-Past")]
+		public IQueryable<Funcionario> GetFuncAumentoInPast()
+		{
+			return funcionarioRepository.GetFuncAumentoInPast();
+		}
+		
+
 		[HttpPost]
 		public IActionResult Post(Funcionario func)
 		{
 			funcionarioRepository.Add(func);
 			return Ok("Usuário inserido com sucesso");
 		}
+
+		
     }
 }

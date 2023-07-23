@@ -32,6 +32,12 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
 		public IQueryable<Funcionario> GetAllFuncionarios()
 		{
 			return context.Funcionarios;
+
+		}
+
+		public IQueryable<Funcionario> GetAllInfoByFuncionarios()
+		{
+			return context.Funcionarios.AsNoTracking().Include(x => x.Departamento).Include(x => x.Cargo).Include(x => x.Categoria);
 		}
 
 		public Funcionario GetAllInfoFuncionarioById(int id)
@@ -43,9 +49,26 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
 													  .FirstOrDefault();
 		}
 
+		public IQueryable<Funcionario> GetFuncAumentoInPast()
+		{
+			return context.Funcionarios.AsNoTracking().Include(x => x.Cargo).Where(x => x.SalarioAtual > x.Cargo.SalarioBase).Select(x => new Funcionario { Nome = x.Nome, Cargo = new Cargo { Descricao = x.Cargo.Descricao } });
+		}
+
 		public Funcionario GetFuncionarioById(int id)
 		{
 			return context.Funcionarios.AsNoTracking().Where(x => x.Id == id).FirstOrDefault();
 		}
+
+		public IQueryable<Funcionario> GetFuncYear(int year)
+		{
+			return context.Funcionarios.Where(x => x.DTEntrada.Year == year);
+		}
+
+		public int QtdFuncDpSoftware()
+		{
+			return context.Funcionarios.AsNoTracking().Include(x => x.Departamento).Where(x => x.Departamento.Descricao == "Desenvolvimento de Software").Count();
+		}
+
+		
 	}
 }

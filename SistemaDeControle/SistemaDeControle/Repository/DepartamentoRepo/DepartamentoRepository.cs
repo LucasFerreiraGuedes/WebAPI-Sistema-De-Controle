@@ -1,4 +1,5 @@
-﻿using SistemaDeControle.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaDeControle.Context;
 using SistemaDeControle.Model;
 
 namespace SistemaDeControle.Repository.DepartamentoRepo
@@ -23,5 +24,7 @@ namespace SistemaDeControle.Repository.DepartamentoRepo
 		{
 			return context.Departamentos.ToList();
 		}
+
+		
 	}
 }

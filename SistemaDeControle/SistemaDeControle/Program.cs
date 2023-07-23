@@ -3,6 +3,7 @@ using SistemaDeControle.Repository.CargoRepo;
 using SistemaDeControle.Repository.CategoriaRepo;
 using SistemaDeControle.Repository.DepartamentoRepo;
 using SistemaDeControle.Repository.FuncionarioRepo;
+using SistemaDeControle.Repository.GestorRepo;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,8 @@ builder.Services.AddScoped<IDepartamento,DepartamentoRepository>();
 builder.Services.AddScoped<ICargoRepository,CargoRepository>();
 builder.Services.AddScoped<ICategoriaRepository,CategoriaRepository>();
 builder.Services.AddScoped<IFuncionarioRepository,FuncionarioRepository>();
+builder.Services.AddScoped<IGestorRepository, GestorRepository>();
+
 
 var app = builder.Build();
 

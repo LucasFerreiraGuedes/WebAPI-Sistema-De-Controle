@@ -7,6 +7,6 @@ namespace SistemaDeControle.Repository.CargoRepo
 		IQueryable<Cargo> GetAllCargos();
 
 		Cargo GetCargoById(int id);
-
+		Boolean UpdateSalarioBase(string cargo, decimal salarioBase);
 	}
 }

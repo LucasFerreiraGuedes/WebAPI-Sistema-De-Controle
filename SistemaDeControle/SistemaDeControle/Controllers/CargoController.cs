@@ -32,6 +32,15 @@ namespace SistemaDeControle.Controllers
 			cargoRepository.Add(cargo);
 			return cargo;
 		}
+		[HttpPut("Update-SalarioBase/{cargo},{salarioBase}")]
+		public IActionResult Put(string cargo, decimal salarioBase)
+		{
+			if (cargoRepository.UpdateSalarioBase(cargo, salarioBase))
+			{
+				return Ok("Salário Base atualizado com sucesso");
+			}
+			return BadRequest("Este cargo não existe");
+		}
 
 	}
 }

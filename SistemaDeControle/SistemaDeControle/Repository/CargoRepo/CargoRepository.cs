@@ -1,4 +1,5 @@
-﻿using SistemaDeControle.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using SistemaDeControle.Context;
 using SistemaDeControle.Model;
 
 namespace SistemaDeControle.Repository.CargoRepo
@@ -41,6 +42,18 @@ namespace SistemaDeControle.Repository.CargoRepo
 		{
 			return context.Cargos.Where(x => x.Id == id).FirstOrDefault();
 			
+		}
+		public bool UpdateSalarioBase(string cargo, decimal salarioBase)
+		{
+		      Cargo cargoDev = context.Cargos.Where(x => x.Descricao == cargo).FirstOrDefault();
+			if (cargoDev != null)
+			{
+				cargoDev.SalarioBase = salarioBase;
+				context.Update(cargoDev);
+				context.SaveChanges();
+				return true;
+			}
+			return false;
 		}
 	}
 }

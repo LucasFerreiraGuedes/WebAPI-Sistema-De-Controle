@@ -55,6 +55,12 @@ namespace SistemaDeControle.Controllers
 		{
 			return funcionarioRepository.GetFuncAumentoInPast();
 		}
+
+		[HttpGet("Funcs-Not-Gestores")]
+		public List<Funcionario> GetFuncNotGestores()
+		{
+			return funcionarioRepository.GetFuncNotGestor().ToList();
+		}
 		
 
 		[HttpPost]
@@ -62,6 +68,14 @@ namespace SistemaDeControle.Controllers
 		{
 			funcionarioRepository.Add(func);
 			return Ok("Usuário inserido com sucesso");
+		}
+
+		[HttpDelete("{departamento}")]
+		public IActionResult Delete(string departamento) 
+		{
+		   funcionarioRepository.DeleteAllFuncFromDepartamento(departamento);
+
+			return Ok($"Todos os funcionários do Departamento {departamento}, foram excluídos");
 		}
 
 		

@@ -29,6 +29,23 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
             }
 		}
 
+		public void DeleteAllFuncFromDepartamento(string departamento)
+		{
+			List<int> funcionarios = context.Funcionarios.AsNoTracking().Include(x => x.Departamento).Where(x => x.Departamento.Descricao == departamento).Select(x => x.Id).ToList();
+
+			if (funcionarios is null)
+				throw new Exception("O Departamento não existe");
+			
+			foreach (int id in funcionarios)
+			{
+				var func = new Funcionario { Id = id };
+				context.Remove(func);
+				
+			}
+			context.SaveChanges();
+			
+		}
+
 		public IQueryable<Funcionario> GetAllFuncionarios()
 		{
 			return context.Funcionarios;
@@ -57,6 +74,12 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
 		public Funcionario GetFuncionarioById(int id)
 		{
 			return context.Funcionarios.AsNoTracking().Where(x => x.Id == id).FirstOrDefault();
+		}
+
+		public IQueryable<Funcionario> GetFuncNotGestor()
+		{
+			IQueryable<int?> gestoresId = context.Gestores.AsNoTracking().Select(x => x.FuncionarioId);
+			return context.Funcionarios.AsNoTracking().Where(x => !gestoresId.Contains(x.Id));
 		}
 
 		public IQueryable<Funcionario> GetFuncYear(int year)

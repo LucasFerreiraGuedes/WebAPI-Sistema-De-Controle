@@ -8,11 +8,14 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
 		IQueryable<Funcionario> GetAllInfoByFuncionarios();
 		IQueryable<Funcionario> GetFuncYear(int year);
 		IQueryable<Funcionario> GetFuncAumentoInPast();
+		IQueryable<Funcionario> GetFuncNotGestor();
+		void DeleteAllFuncFromDepartamento(string departamento);
 
 		Funcionario GetFuncionarioById(int id);
 		Funcionario GetAllInfoFuncionarioById(int id);
 
 		int QtdFuncDpSoftware();
+		
 		
 
 

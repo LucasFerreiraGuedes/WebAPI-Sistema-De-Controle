@@ -25,6 +25,10 @@ namespace SistemaDeControle.Repository.DepartamentoRepo
 			return context.Departamentos.ToList();
 		}
 
-		
+		public IEnumerable<IGrouping<Departamento, Funcionario>> GetNumberFuncByAllDep()
+		{
+			 IEnumerable<IGrouping<Departamento,Funcionario>> numberOfFunc = context.Funcionarios.AsNoTracking().GroupBy(x => x.Departamento);	
+			return numberOfFunc;
+		}
 	}
 }

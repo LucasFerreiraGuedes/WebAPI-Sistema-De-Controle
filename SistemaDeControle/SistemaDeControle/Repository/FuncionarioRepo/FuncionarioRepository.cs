@@ -29,6 +29,16 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
             }
 		}
 
+		public Funcionario AttSalarioByFuncOld(decimal aumento)
+		{
+			Funcionario funcOld = context.Funcionarios.AsNoTracking().Where(x => x.DTEntrada.Year == (context.Funcionarios.Min(x => x.DTEntrada.Year))).FirstOrDefault();
+			funcOld.SalarioAtual += aumento;
+			context.Update(funcOld);
+			context.SaveChanges();
+
+			return funcOld;
+		}
+
 		public void DeleteAllFuncFromDepartamento(string departamento)
 		{
 			List<int> funcionarios = context.Funcionarios.AsNoTracking().Include(x => x.Departamento).Where(x => x.Departamento.Descricao == departamento).Select(x => x.Id).ToList();
@@ -69,6 +79,17 @@ namespace SistemaDeControle.Repository.FuncionarioRepo
 		public IQueryable<Funcionario> GetFuncAumentoInPast()
 		{
 			return context.Funcionarios.AsNoTracking().Include(x => x.Cargo).Where(x => x.SalarioAtual > x.Cargo.SalarioBase).Select(x => new Funcionario { Nome = x.Nome, Cargo = new Cargo { Descricao = x.Cargo.Descricao } });
+		}
+
+		public Funcionario GetFuncBiggerSalario()
+		{
+			return context.Funcionarios.AsNoTracking().Include(x => x.Cargo).Include(x => x.Departamento).Where(x => x.SalarioAtual == (context.Funcionarios.Max(x => x.SalarioAtual))).FirstOrDefault();
+		}
+
+		public IQueryable<Funcionario> GetFuncByDpBySalario(string departamento, decimal salario)
+		{
+			return context.Funcionarios.AsNoTracking().Include(x => x.Departamento).Include(x => x.Cargo).Where(x => x.Departamento.Descricao == departamento)
+																					                     .Where(x => x.SalarioAtual > salario);
 		}
 
 		public Funcionario GetFuncionarioById(int id)

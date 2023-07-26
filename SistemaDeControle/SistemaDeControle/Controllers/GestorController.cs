@@ -9,15 +9,21 @@ namespace SistemaDeControle.Controllers
 	public class GestorController : ControllerBase
 	{
 		private readonly IGestorRepository gestorRepository;
-        public GestorController(IGestorRepository _repository)
-        {
-            gestorRepository = _repository;
-        }
+		public GestorController(IGestorRepository _repository)
+		{
+			gestorRepository = _repository;
+		}
 
 		[HttpGet]
 		public List<Gestor> GetAllInfoGestores()
 		{
 			return gestorRepository.GetAllGestores().ToList();
+		}
+
+		[HttpPut("Put-Gestor-By-Dp-By-Name/{departamento},{nome}")]
+		public List<Gestor> PutGestorByDpByName(string departamento,string nome)
+		{
+			return gestorRepository.PutGestorByDpByName(departamento, nome).ToList();
 		}
 
         [HttpPost]

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SistemaDeControle.Context;
+using SistemaDeControle.Migrations;
 using SistemaDeControle.Model;
 
 namespace SistemaDeControle.Repository.GestorRepo
@@ -26,6 +27,30 @@ namespace SistemaDeControle.Repository.GestorRepo
 		public IQueryable<Gestor> GetAllGestores()
 		{
 			return context.Gestores.AsNoTracking().Include(x => x.Departamento).Include(x => x.Funcionario);
+		}
+
+		public IQueryable<Gestor> PutGestorByDpByName(string departamento, string name)
+		{
+			Gestor oldGestor = context.Gestores.AsNoTracking().Include(x => x.Departamento).Include(x => x.Funcionario).Where(x => x.Departamento.Descricao == departamento).FirstOrDefault();
+
+			if (oldGestor == null)
+			{
+				throw new Exception("Este departamento não existe");
+			}
+			
+
+			Funcionario newFunc = context.Funcionarios.AsNoTracking().Where(x => x.Nome == name).FirstOrDefault();
+
+			if (newFunc == null)
+			{
+				throw new Exception("Este funcionário não existe");
+			}
+			oldGestor.FuncionarioId = newFunc.Id;
+			context.Update(oldGestor);
+			context.SaveChanges();
+
+			return context.Gestores;
+			
 		}
 	}
 }

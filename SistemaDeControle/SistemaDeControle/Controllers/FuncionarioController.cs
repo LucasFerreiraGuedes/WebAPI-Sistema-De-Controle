@@ -61,6 +61,24 @@ namespace SistemaDeControle.Controllers
 		{
 			return funcionarioRepository.GetFuncNotGestor().ToList();
 		}
+
+		[HttpGet("Get-Func-Bigger-Salario")]
+		public Funcionario GetFuncBiggerSalario()
+		{
+			return funcionarioRepository.GetFuncBiggerSalario();
+		}
+
+		[HttpGet("Get-Funcs-By-Dp-By-Salario/{departamento},{salario}")]
+		public List<Funcionario> GetFuncByDpBySalario(string departamento, decimal salario)
+		{
+			return funcionarioRepository.GetFuncByDpBySalario(departamento, salario).ToList();
+		}
+
+		[HttpPut("Get-Func-More-Old/{aumento}")]
+		public Funcionario GetFuncMoreOld(decimal aumento)
+		{
+			return funcionarioRepository.AttSalarioByFuncOld(aumento);
+		}
 		
 
 		[HttpPost]

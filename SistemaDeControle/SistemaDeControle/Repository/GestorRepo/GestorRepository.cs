@@ -45,11 +45,12 @@ namespace SistemaDeControle.Repository.GestorRepo
 			{
 				throw new Exception("Este funcionário não existe");
 			}
-			oldGestor.FuncionarioId = newFunc.Id;
-			context.Update(oldGestor);
+			Gestor newGestor = new Gestor { FuncionarioId = newFunc.Id, DepartamentoId = oldGestor.DepartamentoId };
+			context.Remove(oldGestor);
+			context.Add(newGestor);
 			context.SaveChanges();
 
-			return context.Gestores;
+			return context.Gestores.AsNoTracking().Include(x => x.Funcionario).Include(x => x.Departamento);
 			
 		}
 	}

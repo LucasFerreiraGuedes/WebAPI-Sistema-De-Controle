@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SistemaDeControle</name>
+    </assembly>
+    <members>
+        <member name="M:SistemaDeControle.Controllers.CargoController.GetAllCargos">
+            <summary>
+            Metódo responsável por retornar todos os cargos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:SistemaDeControle.Migrations.CriandoCamadaDeDominio">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.CriandoCamadaDeDominio.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.CriandoCamadaDeDominio.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.CriandoCamadaDeDominio.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:SistemaDeControle.Migrations.RemovendoCategoriaCargo">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.RemovendoCategoriaCargo.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.RemovendoCategoriaCargo.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.RemovendoCategoriaCargo.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:SistemaDeControle.Migrations.NullableGestor">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.NullableGestor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.NullableGestor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.NullableGestor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:SistemaDeControle.Migrations.DeleteCascadeGestor">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.DeleteCascadeGestor.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.DeleteCascadeGestor.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Migrations.DeleteCascadeGestor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

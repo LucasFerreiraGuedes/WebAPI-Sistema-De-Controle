@@ -172,3 +172,8 @@ C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\W
 C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\obj\Debug\net6.0\SistemaDeControle.pdb
 C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\obj\Debug\net6.0\SistemaDeControle.genruntimeconfig.cache
 C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\obj\Debug\net6.0\ref\SistemaDeControle.dll
+C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\bin\Debug\net6.0\SistemaDeControle.xml
+C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\Lucas Ferreira Gudes\source\repos\repo - SistemaDeGerenciamentoWebAPi\WebAPI-Sistema-De-Controle\SistemaDeControle\SistemaDeControle\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll

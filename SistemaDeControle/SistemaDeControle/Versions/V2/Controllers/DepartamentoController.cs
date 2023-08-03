@@ -4,10 +4,10 @@ using SistemaDeControle.Repository;
 using SistemaDeControle.Repository.DepartamentoRepo;
 using System.Collections.Generic;
 
-namespace SistemaDeControle.Versions.V1.Controllers
+namespace SistemaDeControle.Versions.V2.Controllers
 {
 	[ApiController]
-	[ApiVersion("1.0")]
+	[ApiVersion("2.0")]
 	[Route("api/v{version:apiVersion}/[controller]")]
 	public class DepartamentoController : ControllerBase
     {

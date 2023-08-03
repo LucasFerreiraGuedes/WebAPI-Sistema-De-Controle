@@ -4,12 +4,6 @@
         <name>SistemaDeControle</name>
     </assembly>
     <members>
-        <member name="M:SistemaDeControle.Controllers.CargoController.GetAllCargos">
-            <summary>
-            Metódo responsável por retornar todos os cargos
-            </summary>
-            <returns></returns>
-        </member>
         <member name="T:SistemaDeControle.Migrations.CriandoCamadaDeDominio">
             <inheritdoc />
         </member>
@@ -57,6 +51,354 @@
         </member>
         <member name="M:SistemaDeControle.Migrations.DeleteCascadeGestor.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CargoController.GetAllCargos">
+            <summary>
+            Metódo responsável por retornar todos os cargos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CargoController.GetCargoById(System.Int32)">
+            <summary>
+            Recupera um cargo a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CargoController.Post(SistemaDeControle.Model.Cargo)">
+            <summary>
+            Metódo responsável por adicionar um novo cargo a Base de Dados
+            </summary>
+            <param name="cargo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CargoController.Put(System.String,System.Decimal)">
+            <summary>
+            Metódo responsável por atualizar o salário Base de um Cargo 
+            </summary>
+            <param name="cargo"></param>
+            <param name="salarioBase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CategoriaController.GetAllCategorias">
+            <summary>
+            Metódo responsável por retornar todas as Categorias
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CategoriaController.GetCategoriaByID(System.Int32)">
+            <summary>
+            Recupera uma categoria a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.CategoriaController.Post(SistemaDeControle.Model.Categoria)">
+            <summary>
+            Metódo responsável por adicionar uma Categoria na Base de Dados
+            </summary>
+            <param name="categoria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.DepartamentoController.GetAllDep">
+            <summary>
+            Metódo responsável por recuperar todos os Departamentos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.DepartamentoController.GetCount">
+            <summary>
+            Recupera a quantidade de funcionários presente em cada Departamento
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.DepartamentoController.Post(SistemaDeControle.Model.Departamento)">
+            <summary>
+            Metódo responsável por adicionar um novo Departamento na Base de Dados
+            </summary>
+            <param name="dp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetAllFuncionarios">
+            <summary>
+            Metódo responsável por recuperar todos os funcionários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncionarioById(System.Int32)">
+            <summary>
+            Recupera um funcionário a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetAllInfoFuncinario(System.Int32)">
+            <summary>
+            Recupera todas as informações de um funcionário a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GettAllInfoFuncionarios">
+            <summary>
+            Recupera todas as informações de todos os funcionários da Empresa
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncDpSoftware">
+            <summary>
+            Recupera a qauntidade de funcionários que trabalham no Departamento de Software
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncByYear(System.Int32)">
+            <summary>
+            Recupera os funcionários que entraram naquele ano específico
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncAumentoInPast">
+            <summary>
+            Recupera todos os funcionários que já tiveram aumento em seu salário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncNotGestores">
+            <summary>
+            Recupera todos os funcionários que não são Gestores
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncBiggerSalario">
+            <summary>
+            Recupera o funcionário que possui o maior salário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncByDpBySalario(System.String,System.Decimal)">
+            <summary>
+            Recupera todos os funcionários do Departamento que possuem um salário maior do que o informado
+            </summary>
+            <param name="departamento"></param>
+            <param name="salario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.GetFuncMoreOld(System.Decimal)">
+            <summary>
+            Aumenta o salário do funcionário que está a mais tempo na Empresa
+            </summary>
+            <param name="aumento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.Post(SistemaDeControle.Model.Funcionario)">
+            <summary>
+            Metódo responsável por adicionar um novo funcinário na Base de Dados
+            </summary>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.FuncionarioController.Delete(System.String)">
+            <summary>
+            Metódo responsável por apagar todos os funcionários de um Departamento
+            </summary>
+            <param name="departamento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.GestorController.GetAllInfoGestores">
+            <summary>
+            Recupera todas as informações de todos os Gestores da Empresa
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.GestorController.PutGestorByDpByName(System.String,System.String)">
+            <summary>
+            Metódo responsável por alterar o Gestor de um departamento especificado
+            </summary>
+            <param name="departamento"></param>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V1.Controllers.GestorController.Post(SistemaDeControle.Model.Gestor)">
+            <summary>
+            Metódo responsável por adicionar um novo Gestor de um departamento a Base de Dados
+            </summary>
+            <param name="gestor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CargoController.GetAllCargos">
+            <summary>
+            Metódo responsável por retornar todos os cargos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CargoController.GetCargoById(System.Int32)">
+            <summary>
+            Recupera um cargo a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CargoController.Post(SistemaDeControle.Model.Cargo)">
+            <summary>
+            Metódo responsável por adicionar um novo cargo a Base de Dados
+            </summary>
+            <param name="cargo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CargoController.Put(System.String,System.Decimal)">
+            <summary>
+            Metódo responsável por atualizar o salário Base de um Cargo 
+            </summary>
+            <param name="cargo"></param>
+            <param name="salarioBase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CategoriaController.GetAllCategorias">
+            <summary>
+            Metódo responsável por retornar todas as Categorias
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CategoriaController.GetCategoriaByID(System.Int32)">
+            <summary>
+            Recupera uma categoria a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.CategoriaController.Post(SistemaDeControle.Model.Categoria)">
+            <summary>
+            Metódo responsável por adicionar uma Categoria na Base de Dados
+            </summary>
+            <param name="categoria"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.DepartamentoController.GetAllDep">
+            <summary>
+            Metódo responsável por recuperar todos os Departamentos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.DepartamentoController.GetCount">
+            <summary>
+            Recupera a quantidade de funcionários presente em cada Departamento
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.DepartamentoController.Post(SistemaDeControle.Model.Departamento)">
+            <summary>
+            Metódo responsável por adicionar um novo Departamento na Base de Dados
+            </summary>
+            <param name="dp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetAllFuncionarios">
+            <summary>
+            Metódo responsável por recuperar todos os funcionários
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncionarioById(System.Int32)">
+            <summary>
+            Recupera um funcionário a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetAllInfoFuncinario(System.Int32)">
+            <summary>
+            Recupera todas as informações de um funcionário a partir de seu ID
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GettAllInfoFuncionarios">
+            <summary>
+            Recupera todas as informações de todos os funcionários da Empresa
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncDpSoftware">
+            <summary>
+            Recupera a qauntidade de funcionários que trabalham no Departamento de Software
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncByYear(System.Int32)">
+            <summary>
+            Recupera os funcionários que entraram naquele ano específico
+            </summary>
+            <param name="year"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncAumentoInPast">
+            <summary>
+            Recupera todos os funcionários que já tiveram aumento em seu salário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncNotGestores">
+            <summary>
+            Recupera todos os funcionários que não são Gestores
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncBiggerSalario">
+            <summary>
+            Recupera o funcionário que possui o maior salário
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncByDpBySalario(System.String,System.Decimal)">
+            <summary>
+            Recupera todos os funcionários do Departamento que possuem um salário maior do que o informado
+            </summary>
+            <param name="departamento"></param>
+            <param name="salario"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.GetFuncMoreOld(System.Decimal)">
+            <summary>
+            Aumenta o salário do funcionário que está a mais tempo na Empresa
+            </summary>
+            <param name="aumento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.Post(SistemaDeControle.Model.Funcionario)">
+            <summary>
+            Metódo responsável por adicionar um novo funcinário na Base de Dados
+            </summary>
+            <param name="func"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.FuncionarioController.Delete(System.String)">
+            <summary>
+            Metódo responsável por apagar todos os funcionários de um Departamento
+            </summary>
+            <param name="departamento"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.GestorController.GetAllInfoGestores">
+            <summary>
+            Recupera todas as informações de todos os Gestores da Empresa
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.GestorController.PutGestorByDpByName(System.String,System.String)">
+            <summary>
+            Metódo responsável por alterar o Gestor de um departamento especificado
+            </summary>
+            <param name="departamento"></param>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SistemaDeControle.Versions.V2.Controllers.GestorController.Post(SistemaDeControle.Model.Gestor)">
+            <summary>
+            Metódo responsável por adicionar um novo Gestor de um departamento a Base de Dados
+            </summary>
+            <param name="gestor"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

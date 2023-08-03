@@ -2,10 +2,10 @@
 using SistemaDeControle.Model;
 using SistemaDeControle.Repository.GestorRepo;
 
-namespace SistemaDeControle.Versions.V1.Controllers
+namespace SistemaDeControle.Versions.V2.Controllers
 {
 	[ApiController]
-	[ApiVersion("1.0")]
+	[ApiVersion("2.0")]
 	[Route("api/v{version:apiVersion}/[controller]")]
 	public class GestorController : ControllerBase
     {

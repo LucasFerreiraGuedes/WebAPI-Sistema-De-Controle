@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using SistemaDeControle.Model;
 using SistemaDeControle.Repository.FuncionarioRepo;
+using SistemaDeControle.Versions.V2.Profiles.DTO;
 
 namespace SistemaDeControle.Versions.V2.Controllers
 {
@@ -10,10 +12,12 @@ namespace SistemaDeControle.Versions.V2.Controllers
 	public class FuncionarioController : ControllerBase
     {
         private readonly IFuncionarioRepository funcionarioRepository;
+        private readonly IMapper _mapper;
 
-        public FuncionarioController(IFuncionarioRepository repository)
+        public FuncionarioController(IFuncionarioRepository repository, IMapper mapper)
         {
             funcionarioRepository = repository;
+            _mapper = mapper;
         }
 
         /// <summary>
@@ -21,9 +25,10 @@ namespace SistemaDeControle.Versions.V2.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("Funcionarios")]
-        public List<Funcionario> GetAllFuncionarios()
+        public List<FuncionarioDTO> GetAllFuncionarios()
         {
-            return funcionarioRepository.GetAllFuncionarios().ToList();
+            return _mapper.Map<List<FuncionarioDTO>>(funcionarioRepository.GetAllFuncionarios().ToList());
+        
         }
 
         /// <summary>
@@ -32,9 +37,9 @@ namespace SistemaDeControle.Versions.V2.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("{id}")]
-        public Funcionario GetFuncionarioById(int id)
+        public FuncionarioDTO GetFuncionarioById(int id)
         {
-            return funcionarioRepository.GetFuncionarioById(id);
+            return _mapper.Map<FuncionarioDTO>(funcionarioRepository.GetFuncionarioById(id));
         }
 
         /// <summary>

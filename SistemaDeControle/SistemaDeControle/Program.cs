@@ -17,6 +17,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSwagger();
 builder.Services.AddSqlServer<AppDbContext>(builder.Configuration.GetConnectionString("MinhaConexao"));
 
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddScoped<IDepartamento,DepartamentoRepository>();
 builder.Services.AddScoped<ICargoRepository,CargoRepository>();
 builder.Services.AddScoped<ICategoriaRepository,CategoriaRepository>();
